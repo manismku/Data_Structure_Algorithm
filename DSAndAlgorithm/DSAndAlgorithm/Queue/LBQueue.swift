@@ -14,6 +14,8 @@ protocol Queue {
     associatedtype T
     func enqueue(item: T) -> Result<Bool, QueueError>
     func deque() -> Result<T, QueueError>
+    func front() -> Result<T, QueueError>
+    func rear() ->  Result<T, QueueError>
     func isFull() -> Bool
     func isEmpty() -> Bool
 }
@@ -40,14 +42,14 @@ class LBQueue: Queue {
     private let CAPACITY = 2
     private var size = 0
     private var items: [T]
-    private var front: Int
-    private var rear: Int
+    private var frontIndx: Int
+    private var rearIndx: Int
 
     init() {
         items = [T]()
         items.reserveCapacity(CAPACITY)
-        front = 0
-        rear = 0
+        frontIndx = 0
+        rearIndx = 0
     }
 
     func enqueue(item: T) -> Result<Bool, QueueError> {
@@ -79,6 +81,26 @@ class LBQueue: Queue {
     func isEmpty() -> Bool {
         return size == 0
     }
+
+
+    func front() -> Result<T, QueueError> {
+
+        guard !isEmpty() else {
+            return Result.failure(.Empty)
+        }
+
+        return .success(items.first!)
+    }
+
+    func rear() ->  Result<T, QueueError> {
+
+        guard !isFull() else {
+            return Result.failure(.Full)
+        }
+
+        return .success(items.last!)
+    }
+
 
     static func test() {
         let lbqueue = LBQueue()
