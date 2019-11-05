@@ -49,7 +49,7 @@ class LBQueue: Queue {
         items = [T]()
         items.reserveCapacity(CAPACITY)
         frontIndx = 0
-        rearIndx = 0
+        rearIndx = -1
     }
 
     func enqueue(item: T) -> Result<Bool, QueueError> {
@@ -58,8 +58,10 @@ class LBQueue: Queue {
             return .failure(.Full)
         }
 
-        items.append(item)
-        size = items.count
+        rearIndx = (rearIndx + 1) % self.CAPACITY
+
+        items.insert(item, at: rearIndx)
+        size += 1
 
         return .success(true)
     }
@@ -69,7 +71,8 @@ class LBQueue: Queue {
             return Result.failure(.Empty)
         }
 
-        let val =  items.removeFirst()
+        let val =  items[frontIndx]
+        self.frontIndx = (frontIndx + 1) % CAPACITY
         size -= 1
         return .success(val)
     }
