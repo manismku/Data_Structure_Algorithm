@@ -10,3 +10,12 @@ import Foundation
 
 print("Hello, World!")
 
+/*
+                1. Queue
+
+ */
+
+LBQueue.test()
+
+
+
