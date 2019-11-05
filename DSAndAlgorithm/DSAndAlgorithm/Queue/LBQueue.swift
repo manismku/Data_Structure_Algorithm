@@ -25,9 +25,9 @@ enum QueueError: LocalizedError {
     var localizedDescription: String {
         switch self {
         case .Full:
-            return "Can't add item as Queue is full."
+            return "Queue is full."
         case .Empty:
-            return "Can't deque an item as queue is empty."
+            return "Queue is empty."
         }
     }
 }
