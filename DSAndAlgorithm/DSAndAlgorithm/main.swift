@@ -18,4 +18,13 @@ print("Hello, World!")
 LBQueue.test()
 
 
+/*
+
+ 2. DQueue
+
+ */
+
+LBDqueue.testDqueue()
+
+
 
