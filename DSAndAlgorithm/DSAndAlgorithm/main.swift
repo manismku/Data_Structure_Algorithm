@@ -11,20 +11,19 @@ import Foundation
 print("Hello, World!")
 
 /*
-                1. Queue
+ 1. Queue
+*/
 
- */
-
-LBQueue.test()
-
+//LBQueue.test()
 
 /*
-
  2. DQueue
-
  */
 
-LBDqueue.testDqueue()
+//LBDqueue.testDqueue()
 
+/*
+ 3. LBPriorityQueue
+*/
 
-
+LBPriorityQueue.testLBPriorityQueue()
