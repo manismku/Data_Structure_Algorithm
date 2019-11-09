@@ -25,5 +25,3 @@ print("Hello, World!")
 /*
  3. LBPriorityQueue
 */
-
-LBPriorityQueue.testLBPriorityQueue()

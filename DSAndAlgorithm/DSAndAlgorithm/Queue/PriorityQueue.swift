@@ -232,24 +232,3 @@ class LBPriorityQueue: PriorityQueue {
 }
 
 
-extension LBPriorityQueue  {
-    static func testLBPriorityQueue() {
-        let pq = LBPriorityQueue()
-
-        var pqoutput = pq.create(input: [11,3,2,15,5,4,45])
-
-        print("Heap priority queue = \(pqoutput)")
-
-        print("Minimu element is = \(pq.delete())")
-
-        //pqoutput = pq.insert(elem: 1)
-
-        print("Heap priority now = \(pqoutput)")
-
-        print("Minimu element is = \(pq.delete())")
-
-
-    }
-}
-
-
