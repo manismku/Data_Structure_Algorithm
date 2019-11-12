@@ -10,7 +10,7 @@ import Foundation
 
 
 // Queue protocol / interface
-protocol Queue {
+protocol CircularQueue {
     associatedtype T
     func enqueue(item: T) -> Result<Bool, QueueError>
     func deque() -> Result<T, QueueError>
@@ -23,6 +23,7 @@ protocol Queue {
 enum QueueError: LocalizedError {
     case Full
     case Empty
+    case InvalidInput
 
     var localizedDescription: String {
         switch self {
@@ -30,12 +31,14 @@ enum QueueError: LocalizedError {
             return "Queue is full."
         case .Empty:
             return "Queue is empty."
+        case .InvalidInput:
+            return "Input is not valid."
         }
     }
 }
 
 
-class LBQueue: Queue {
+class LBCircularQueue: CircularQueue {
 
     typealias T = Int
 
@@ -106,7 +109,7 @@ class LBQueue: Queue {
 
 
     static func test() {
-        let lbqueue = LBQueue()
+        let lbqueue = LBCircularQueue()
 
         _ = lbqueue.enqueue(item: 10)
         _ = lbqueue.enqueue(item: 5)
