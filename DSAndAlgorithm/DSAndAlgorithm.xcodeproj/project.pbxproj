@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		796B9482237AE0DC00DC3D38 /* InterleaveElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B9481237AE0DC00DC3D38 /* InterleaveElementTests.swift */; };
+		798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798712F1237C54B000D8F57B /* MaximumWindowElement.swift */; };
+		798712F3237C555600D8F57B /* InterleaveElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B9481237AE0DC00DC3D38 /* InterleaveElementTests.swift */; };
+		798712F5237C577200D8F57B /* MaximumWindowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798712F1237C54B000D8F57B /* MaximumWindowElement.swift */; };
+		798712F6237C577B00D8F57B /* LBDequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D8AF7B2372D82D002C7B66 /* LBDequeue.swift */; };
+		79C17F322382CF71001A7A6B /* MAXWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C17F312382CF71001A7A6B /* MAXWindowTests.swift */; };
 		79D8AF7D2372D82D002C7B66 /* LBDequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D8AF7B2372D82D002C7B66 /* LBDequeue.swift */; };
 		79D8AF802372D85A002C7B66 /* LBCircularQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D8AF7F2372D85A002C7B66 /* LBCircularQueue.swift */; };
 		79D8AF822372FB65002C7B66 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D8AF812372FB65002C7B66 /* PriorityQueue.swift */; };
@@ -37,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		796B9481237AE0DC00DC3D38 /* InterleaveElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterleaveElementTests.swift; sourceTree = "<group>"; };
+		798712F1237C54B000D8F57B /* MaximumWindowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaximumWindowElement.swift; sourceTree = "<group>"; };
+		79C17F312382CF71001A7A6B /* MAXWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAXWindowTests.swift; sourceTree = "<group>"; };
 		79D8AF7B2372D82D002C7B66 /* LBDequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBDequeue.swift; sourceTree = "<group>"; };
 		79D8AF7F2372D85A002C7B66 /* LBCircularQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBCircularQueue.swift; sourceTree = "<group>"; };
 		79D8AF812372FB65002C7B66 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 				79D8AF812372FB65002C7B66 /* PriorityQueue.swift */,
 				79D8AF9B2379CE61002C7B66 /* Queue.swift */,
 				79D8AF9D2379CE8F002C7B66 /* InterleaveElements.swift */,
+				798712F1237C54B000D8F57B /* MaximumWindowElement.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -101,6 +108,7 @@
 			children = (
 				796B9481237AE0DC00DC3D38 /* InterleaveElementTests.swift */,
 				79D8AF9423756428002C7B66 /* PriorityQueueTests.swift */,
+				79C17F312382CF71001A7A6B /* MAXWindowTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -230,11 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798712F3237C555600D8F57B /* InterleaveElementTests.swift in Sources */,
 				79D8AFA2237A8FC2002C7B66 /* Queue.swift in Sources */,
 				79D8AFA1237A8F64002C7B66 /* InterleaveElements.swift in Sources */,
 				79D8AFA4237A9067002C7B66 /* Stack.swift in Sources */,
 				79D8AFA3237A904E002C7B66 /* LBCircularQueue.swift in Sources */,
+				798712F5237C577200D8F57B /* MaximumWindowElement.swift in Sources */,
 				79D8AF9523756428002C7B66 /* PriorityQueueTests.swift in Sources */,
+				798712F6237C577B00D8F57B /* LBDequeue.swift in Sources */,
+				79C17F322382CF71001A7A6B /* MAXWindowTests.swift in Sources */,
 				79D8AF962375649A002C7B66 /* PriorityQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,8 +258,8 @@
 				79D8AF7D2372D82D002C7B66 /* LBDequeue.swift in Sources */,
 				79D8AF9C2379CE61002C7B66 /* Queue.swift in Sources */,
 				79D8AF822372FB65002C7B66 /* PriorityQueue.swift in Sources */,
-				796B9482237AE0DC00DC3D38 /* InterleaveElementTests.swift in Sources */,
 				79E84A8623646B1700EFB4E1 /* main.swift in Sources */,
+				798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */,
 				79D8AF9A2379CE45002C7B66 /* Stack.swift in Sources */,
 				79D8AF802372D85A002C7B66 /* LBCircularQueue.swift in Sources */,
 				79D8AF9E2379CE8F002C7B66 /* InterleaveElements.swift in Sources */,

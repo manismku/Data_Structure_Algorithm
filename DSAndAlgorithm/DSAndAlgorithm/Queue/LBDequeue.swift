@@ -25,7 +25,7 @@ protocol Dequeue {
     func getRear() -> Result<T, QueueError>
 }
 
-class LBDqueue: Dequeue {
+class LBDequeue: Dequeue {
 
     typealias T = Int
     private var capacity: Int
@@ -74,6 +74,7 @@ class LBDqueue: Dequeue {
 
         if self.isEmpty() {
             rearIndx = 0
+            frontIndx = 0 
         } else if rearIndx == (self.capacity - 1) {
                 rearIndx = 0
         } else {
@@ -101,6 +102,7 @@ class LBDqueue: Dequeue {
 
     func deleteLast() -> Result<T, QueueError> {
 
+        self.items.remove(at: rearIndx)
         if frontIndx == rearIndx {
             frontIndx = -1
             rearIndx = 0
@@ -142,7 +144,7 @@ class LBDqueue: Dequeue {
 
     static func testDqueue() {
 
-        let lbDqueue = LBDqueue(capacity: 2)
+        let lbDqueue = LBDequeue(capacity: 2)
 
         var result = lbDqueue.insertFront(item: 1)
         print("1st OP result is = \(result)")
