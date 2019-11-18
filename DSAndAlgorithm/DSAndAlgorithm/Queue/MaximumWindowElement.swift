@@ -16,14 +16,17 @@ extension LBDequeue {
      */
     static func maximumWindow(input: [T], windowSize: Int) -> [T] {
 
+        // validate input
         guard windowSize > 0 && windowSize < input.count + 1  else {
             return [Int]()
         }
 
         let dq = LBDequeue(capacity: windowSize)
 
+        // to hold output
         var output = [T]()
 
+        //  first create window
         for (indx, value) in input.enumerated() {
             if indx > (windowSize - 1)
             {
@@ -35,25 +38,28 @@ extension LBDequeue {
             }
         }
 
+        // store max in output
         if case .success(let frontVal) = dq.getFront() {
             output.append(frontVal)
         }
 
+        // slide window one psotion right till valid index
         for indx in 0..<input.count {
-
+            // boundry condition
             if indx + windowSize >  input.count - 1 {
                 break
             }
 
+            // insert new element in dequeue
             insertInQueue(val: input[indx + windowSize], dq: dq)
 
-            //get the maximum elemnt in queue
+            // Get max element from queue
             if case .success(let frontVal) = dq.getFront() {
                 output.append(frontVal)
             }
-
         }
 
+        // return output
         return output
     }
 
