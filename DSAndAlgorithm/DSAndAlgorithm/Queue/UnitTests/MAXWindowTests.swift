@@ -32,7 +32,7 @@ class MAXWindowTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
         let output = LBDequeue.maximumWindow(input: [1,3,-1,-3,5,3,6,7], windowSize: 1)
-        XCTAssert(output == [1,3,-1,-3,5,3,6,7], "Not sliding window max")
+        XCTAssert(output == [1,3,-1,-3,5,3,6,7], "With window size one output should be same as input array")
     }
 
 
