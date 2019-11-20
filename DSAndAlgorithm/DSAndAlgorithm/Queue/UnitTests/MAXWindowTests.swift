@@ -44,5 +44,13 @@ class MAXWindowTests: XCTestCase {
         XCTAssert(output == [], "Not sliding window. There should not be any element inside the window.")
     }
 
+    func testMaxWindowWithSameElement() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+        let output = LBDequeue.maximumWindow(input: [1,1,1,1,1,1,1,1], windowSize: 3)
+        XCTAssert(output == [1,1,1,1,1,1,1,1], "Not sliding window. There should not be any element inside the window.")
+    }
+
 
 }
