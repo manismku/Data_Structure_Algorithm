@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793B21B72387A5270056F354 /* RootToLeaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B21B62387A5270056F354 /* RootToLeaf.swift */; };
+		793B21B92387A8AE0056F354 /* RootToLeaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B21B62387A5270056F354 /* RootToLeaf.swift */; };
 		798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798712F1237C54B000D8F57B /* MaximumWindowElement.swift */; };
 		798712F3237C555600D8F57B /* InterleaveElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B9481237AE0DC00DC3D38 /* InterleaveElementTests.swift */; };
 		798712F5237C577200D8F57B /* MaximumWindowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798712F1237C54B000D8F57B /* MaximumWindowElement.swift */; };
@@ -43,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		793B21B62387A5270056F354 /* RootToLeaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootToLeaf.swift; sourceTree = "<group>"; };
 		796B9481237AE0DC00DC3D38 /* InterleaveElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterleaveElementTests.swift; sourceTree = "<group>"; };
 		798712F1237C54B000D8F57B /* MaximumWindowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaximumWindowElement.swift; sourceTree = "<group>"; };
 		798E8D582384600800F1DBB7 /* TreeOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeOperations.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				798E8D582384600800F1DBB7 /* TreeOperations.swift */,
+				793B21B62387A5270056F354 /* RootToLeaf.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -281,6 +285,7 @@
 				79C17F322382CF71001A7A6B /* MAXWindowTests.swift in Sources */,
 				79D8AF962375649A002C7B66 /* PriorityQueue.swift in Sources */,
 				798E8D5D2384602B00F1DBB7 /* TreeTests.swift in Sources */,
+				793B21B92387A8AE0056F354 /* RootToLeaf.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +301,7 @@
 				798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */,
 				79D8AF9A2379CE45002C7B66 /* Stack.swift in Sources */,
 				79D8AF802372D85A002C7B66 /* LBCircularQueue.swift in Sources */,
+				793B21B72387A5270056F354 /* RootToLeaf.swift in Sources */,
 				79D8AF9E2379CE8F002C7B66 /* InterleaveElements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

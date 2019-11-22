@@ -62,9 +62,9 @@ class TreeNode {
 // BinarySearchTree class
 class BinarySearchTree: BSTProtocol {
 
-    private var root: TreeNode?
+    var root: TreeNode?
     private var output =  [Int]()
-    private var rootToLeaf =  [String]()
+    var rootToLeaf =  [String]()
 
     func addChild(elem: Int) {
         // if there is no root
@@ -261,34 +261,4 @@ extension BinarySearchTree: TreeTraversal {
     }
 }
 
-//MARK:- Problems
-extension BinarySearchTree: TreeProblems {
 
-    func printRootToLeaf() -> [String] {
-        printRootToLeafRecursive(self.root,path: "")
-        return self.rootToLeaf
-    }
-
-    private func printRootToLeafRecursive(_ node: TreeNode?, path: String) {
-
-        var newPath = path
-
-        guard let validNode = node else {
-            return
-        }
-
-
-        // process node
-        newPath += String(validNode.val)
-
-        // go left
-        printRootToLeafRecursive(validNode.left, path: newPath + " ")
-        // go right
-        printRootToLeafRecursive(validNode.right, path: newPath  + " ")
-
-        // check last node condition
-        if validNode.left == nil && validNode.right == nil {
-            self.rootToLeaf.append(newPath)
-        }
-    }
-}
