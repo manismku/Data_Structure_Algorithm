@@ -194,4 +194,19 @@ extension TreeTests {
 
         XCTAssert(result == 4, "Incorrect Skewed BST tree size = \(result)")
     }
+
+    func testRootToLeafForBST() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let bst = BinarySearchTree()
+        bst.addChild(elem: 8)
+        bst.addChild(elem: 3)
+        bst.addChild(elem: 1)
+        bst.addChild(elem: 6)
+        bst.addChild(elem: 10)
+
+        let result = bst.printRootToLeaf()
+
+        XCTAssert(result == ["8 3 1", "8 3 6", "8 10"], "Incorrect Skewed BST tree size = \(result)")
+    }
 }

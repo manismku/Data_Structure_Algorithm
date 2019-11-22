@@ -36,12 +36,16 @@ protocol TreeTraversal: class {
 }
 
 
-
-
 protocol TreeProperty {
     func height() -> Int
     func size() -> Int // Total number of elements in the tree
 }
+
+
+protocol TreeProblems {
+    func printRootToLeaf() -> [String]
+}
+
 
 // Tree node
 class TreeNode {
@@ -60,6 +64,7 @@ class BinarySearchTree: BSTProtocol {
 
     private var root: TreeNode?
     private var output =  [Int]()
+    private var rootToLeaf =  [String]()
 
     func addChild(elem: Int) {
         // if there is no root
@@ -234,7 +239,6 @@ extension BinarySearchTree: TreeTraversal {
         self.output.append(elm)
     }
 
-
     private func preorderRecursive(_ node: TreeNode?) {
         guard let validNode = node else {
             return
@@ -252,7 +256,39 @@ extension BinarySearchTree: TreeTraversal {
     }
 
     private func processNode(_ node: TreeNode) -> Int {
-        print("Node value = \(node.val)")
+        print("\(node.val) --->")
         return node.val
+    }
+}
+
+//MARK:- Problems
+extension BinarySearchTree: TreeProblems {
+
+    func printRootToLeaf() -> [String] {
+        printRootToLeafRecursive(self.root,path: "")
+        return self.rootToLeaf
+    }
+
+    private func printRootToLeafRecursive(_ node: TreeNode?, path: String) {
+
+        var newPath = path
+
+        guard let validNode = node else {
+            return
+        }
+
+
+        // process node
+        newPath += String(validNode.val)
+
+        // go left
+        printRootToLeafRecursive(validNode.left, path: newPath + " ")
+        // go right
+        printRootToLeafRecursive(validNode.right, path: newPath  + " ")
+
+        // check last node condition
+        if validNode.left == nil && validNode.right == nil {
+            self.rootToLeaf.append(newPath)
+        }
     }
 }
