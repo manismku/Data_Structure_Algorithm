@@ -8,20 +8,24 @@
 
 import Foundation
 
+
 protocol Queue {
     associatedtype T
-    var size: Int { get }
-    var queue: [T] { get }
-    func dequeue() -> Result<T, QueueError> //Dequeue
+    var isEmpty: Bool { get } // read only
+    var size: Int { get } // read only
+    var front: T? { get } // read only
     func enqueue(elem: T) -> Result<[T], QueueError>
+    func dequeue() -> Result<T, QueueError>
 }
 
+class LBQueue<T>: Queue {
 
-class LBQueue: Queue {
-
-    typealias T = Int
     private var items: [T]
     private var FRONT = 0
+
+    var isEmpty: Bool {
+        return self.items.count == 0
+    }
 
     var size: Int {
         return self.items.count
@@ -31,25 +35,30 @@ class LBQueue: Queue {
         return self.items
     }
 
+    var front: T? {
+        return self.items.first
+    }
+
     init() {
         self.items = [T]()
     }
 
-    private func isEmpty() -> Bool {
-        return self.items.count == 0
-    }
 
+    //AMRK: - Main operations
     func enqueue(elem: T) -> Result<[T], QueueError> {
         self.items.append(elem)
         return .success(self.items)
     }
 
     func dequeue() -> Result<T, QueueError> {
-        guard !self.isEmpty() else {
+        guard !self.isEmpty else {
             return .failure(.Empty)
         }
         let front = self.items[FRONT]
         self.items.removeFirst()
         return .success(front)
     }
+
+    //AMRK: - Aux Operation
+
 }

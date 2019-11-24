@@ -210,3 +210,32 @@ extension TreeTests {
         XCTAssert(result == ["8 3 1", "8 3 6", "8 10"], "Incorrect Skewed BST tree size = \(result)")
     }
 }
+
+
+
+extension TreeTests {
+
+    func testCompleteBinaryTreeInteger() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [1,2,3,4,5])
+        let result = cbt.inorder()
+        XCTAssert(result == [4,2,5,1,3], "Not CBT as Result = \(result)")
+    }
+
+    func testCompleteBinaryTreeFloat() {
+        let cbt = CompleteBinaryTree<Float>()
+        cbt.createCBT(of: [1.0,2.0,3.0,4.0,5.0])
+        let result = cbt.inorder()
+        XCTAssert(result == [4.0,2.0,5.0,1.0,3.0], "Not CBT as Result = \(result)")
+    }
+
+    func testCompleteBinaryTreeString() {
+        let cbt = CompleteBinaryTree<String>()
+        cbt.createCBT(of: ["1","2","3","4","5"])
+        let result = cbt.inorder()
+
+        XCTAssert(result == ["4","2","5","1","3"], "Not CBT as Result = \(result)")
+
+    }
+
+}
