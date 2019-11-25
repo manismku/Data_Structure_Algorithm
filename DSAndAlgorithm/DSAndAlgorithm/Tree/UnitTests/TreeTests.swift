@@ -262,3 +262,20 @@ extension TreeTests {
         XCTAssert(result == [3,6,1,5,2,4], "Not cloned tree. Output = \(result)")
     }
 }
+
+//MARK:- Level max Sum Binary Tre (CBT)
+extension TreeTests {
+    func testCompleteBinaryLevelSum() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [1,2,3,4,5,8,6,7])
+        let result = cbt.levelWithMaxSum(cbt.root)
+        XCTAssert(result == 23, "Not cloned tree. Output = \(result)")
+    }
+
+    func testCompleteBinaryLevelSumWithNegative() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [4,2,-5,-1,3,-2,6])
+        let result = cbt.levelWithMaxSum(cbt.root)
+        XCTAssert(result == 6, "Not cloned tree. Output = \(result)")
+    }
+}

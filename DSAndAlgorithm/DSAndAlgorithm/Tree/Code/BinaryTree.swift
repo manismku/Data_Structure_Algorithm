@@ -25,7 +25,7 @@ class GenericNode<T> {
 class CompleteBinaryTree<T> {
 
     private var queue: LBQueue<GenericNode<T>>
-    private var root: GenericNode<T>?
+    private(set) var root: GenericNode<T>?
     private var output = [T]()
     private var rootCloned: GenericNode<T>?
 
@@ -111,7 +111,7 @@ extension CompleteBinaryTree {
 
 
 //MARK: Problems
-//MARK:- 1. Diameter of tree
+//MARK:- Problem 1. Diameter of tree
 extension CompleteBinaryTree {
     func calculateDiameter() -> Int {
         _ = calculateDiameter(self.root)
@@ -142,7 +142,7 @@ extension CompleteBinaryTree {
 
 }
 
-//MARK:- 2. Create cloned binary tree
+//MARK:-  Problem 2. Create cloned binary tree
 extension CompleteBinaryTree {
     func createClonedBinaryTree() {
 
@@ -188,4 +188,53 @@ extension CompleteBinaryTree {
         //send output to test
         return self.output
     }
+}
+
+
+//MARK:- Problem 3. Print level with maximum sum in a binary tree
+extension CompleteBinaryTree  {
+
+    func levelWithMaxSum(_ aRoot: GenericNode<Int>?) -> Int {
+        var currLvlElemCounter = 0
+        var nextLvlElemCounter = 0
+        var queue = LBQueue<GenericNode<Int>>()
+        var maxSum = 0
+
+        guard var validNode = aRoot  else {
+            return 0
+        }
+
+        _ = queue.enqueue(elem: validNode)
+        currLvlElemCounter += 1
+
+        while !queue.isEmpty {
+            // push in queue
+            var currMax = 0
+            for _ in 0..<currLvlElemCounter {
+                if let newNode = try? queue.dequeue().get() {                    
+                    if let leftNode = newNode.left {
+                        _ = queue.enqueue(elem: leftNode)
+                        nextLvlElemCounter += 1
+                    }
+                    if let rightNode = newNode.right {
+                        _ = queue.enqueue(elem: rightNode)
+                        nextLvlElemCounter += 1
+                    }
+                    currMax += newNode.value
+                }
+            }
+
+            // Now iterate to the next level counter
+            currLvlElemCounter = nextLvlElemCounter
+            nextLvlElemCounter = 0
+
+            if currMax > maxSum {
+                maxSum = currMax
+            }
+        }
+
+        return maxSum
+    }
+
+
 }
