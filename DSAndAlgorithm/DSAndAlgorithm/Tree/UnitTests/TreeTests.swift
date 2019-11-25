@@ -213,13 +213,14 @@ extension TreeTests {
 
 
 
+//MARK:- Complete Binary Tree
 extension TreeTests {
 
     func testCompleteBinaryTreeInteger() {
         let cbt = CompleteBinaryTree<Int>()
-        cbt.createCBT(of: [1,2,3,4,5])
+        cbt.createCBT(of: [1,2,3,4,5,6])
         let result = cbt.inorder()
-        XCTAssert(result == [4,2,5,1,3], "Not CBT as Result = \(result)")
+        XCTAssert(result == [4,2,5,1,6,3], "Not CBT as Result = \(result)")
     }
 
     func testCompleteBinaryTreeFloat() {
@@ -236,6 +237,13 @@ extension TreeTests {
 
         XCTAssert(result == ["4","2","5","1","3"], "Not CBT as Result = \(result)")
 
+    }
+
+    func testCompleteBinaryTreeDiameter() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [1,2,3,4,5])
+        let result = cbt.calculateDiameter()
+        XCTAssert(result == 4, "Diameter should be 4. But result =  \(result)")
     }
 
 }

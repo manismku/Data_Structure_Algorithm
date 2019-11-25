@@ -28,29 +28,25 @@ class CompleteBinaryTree<T> {
     private var root: GenericNode<T>?
     private var output = [T]()
 
+    private var diameter: Int = 0
+
     init() {
         self.queue = LBQueue<GenericNode<T>>()
     }
 
-
+    //MARK:- Attribute
     func createCBT(of input: [T]) {
-
         guard root == nil else {
             return // CBT is already created
         }
-
         for elem in input {
-
             // create node of this element
             let newNode = GenericNode<T>(value: elem)
-
             if queue.isEmpty {
                 _ = queue.enqueue(elem: newNode) // we can directly enque it
                 root = newNode
             } else {
-
                 var frnt = queue.front!
-
                 if frnt.right != nil && frnt.left != nil {
                      _ = try! queue.dequeue().get()
                     frnt = queue.front!
@@ -64,9 +60,7 @@ class CompleteBinaryTree<T> {
 
                 // new node have to enqeued in all cases
                  _ = queue.enqueue(elem: newNode)
-
             }
-
         }
 
         //empty from queue
@@ -104,8 +98,40 @@ extension CompleteBinaryTree {
         // Go right
         inorderRecursive(validNode.right)
     }
-
 }
 
 
+//MARK:- Number of nodes in the longest path is the diameter
+extension CompleteBinaryTree {
+
+    func calculateDiameter() -> Int {
+        _ = calculateDiameter(self.root)
+        return self.diameter
+    }
+
+
+    private func calculateDiameter(_ node: GenericNode<T>?) -> Int {
+
+        guard let validNode = node else {
+            return 0
+        }
+
+        let leftHeight = calculateDiameter(validNode.left)
+        let rightHeight = calculateDiameter(validNode.right)
+
+        // this is calculation based on height after height is calculated for both left and right subtree
+        // of the node
+        self.diameter = maxOf(self.diameter, leftHeight + rightHeight + 1)
+
+        return 1 + maxOf(leftHeight, rightHeight) // this is the calculation of left and right subtree
+
+    }
+
+    // hepler
+    private func maxOf(_ a: Int, _ b: Int) -> Int {
+        return a > b ? a : b
+    }
+
+
+}
 
