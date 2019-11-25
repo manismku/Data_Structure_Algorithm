@@ -100,15 +100,22 @@ extension CompleteBinaryTree {
     }
 }
 
+/*
+ *
+ *                        PROBLEMS
+ *                        PROBLEMS
+ *                        PROBLEMS
+ *
+ */
 
-//MARK:- Number of nodes in the longest path is the diameter
+
+//MARK: Problems
+//MARK:- 1. Diameter of tree
 extension CompleteBinaryTree {
-
     func calculateDiameter() -> Int {
         _ = calculateDiameter(self.root)
         return self.diameter
     }
-
 
     private func calculateDiameter(_ node: GenericNode<T>?) -> Int {
 
@@ -132,6 +139,9 @@ extension CompleteBinaryTree {
         return a > b ? a : b
     }
 
-
 }
 
+//MARK:- 2. Create cloned binary tree
+extension CompleteBinaryTree {
+
+}
