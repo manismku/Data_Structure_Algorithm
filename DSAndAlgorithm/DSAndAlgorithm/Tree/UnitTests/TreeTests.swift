@@ -239,6 +239,13 @@ extension TreeTests {
 
     }
 
+
+}
+
+
+
+//MARK:- Diameter of tree
+extension TreeTests {
     func testCompleteBinaryTreeDiameter() {
         let cbt = CompleteBinaryTree<Int>()
         cbt.createCBT(of: [1,2,3,4,5])
