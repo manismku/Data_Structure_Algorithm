@@ -21,7 +21,7 @@ class TreeTests: XCTestCase {
 }
 
 
-//MARK:- Traversals
+//MARK:- Test BST Traversals
 extension TreeTests {
     func testBSTInorder() {
         // This is an example of a functional test case.
@@ -113,7 +113,7 @@ extension TreeTests {
 }
 
 
-//MARK:- Properties
+//MARK:- Test BST Properties
 extension TreeTests {
     func testEmptyBSTHeight() {
         // This is an example of a functional test case.
@@ -207,27 +207,27 @@ extension TreeTests {
 
         let result = bst.printRootToLeaf()
 
-        XCTAssert(result == ["8 3 1", "8 3 6", "8 10"], "Incorrect Skewed BST tree size = \(result)")
+        XCTAssert(result == ["8 3 1", "8 3 6", "8 10"], "Incorrect Skewed BST tree size. Output = \(result)")
     }
 }
 
 
 
-//MARK:- Complete Binary Tree
+//MARK:- Test Complete Binary Tree
 extension TreeTests {
 
     func testCompleteBinaryTreeInteger() {
         let cbt = CompleteBinaryTree<Int>()
         cbt.createCBT(of: [1,2,3,4,5,6])
         let result = cbt.inorder()
-        XCTAssert(result == [4,2,5,1,6,3], "Not CBT as Result = \(result)")
+        XCTAssert(result == [4,2,5,1,6,3], "Not CBT. Output = \(result)")
     }
 
     func testCompleteBinaryTreeFloat() {
         let cbt = CompleteBinaryTree<Float>()
         cbt.createCBT(of: [1.0,2.0,3.0,4.0,5.0])
         let result = cbt.inorder()
-        XCTAssert(result == [4.0,2.0,5.0,1.0,3.0], "Not CBT as Result = \(result)")
+        XCTAssert(result == [4.0,2.0,5.0,1.0,3.0], "Not CBT. Output = \(result)")
     }
 
     func testCompleteBinaryTreeString() {
@@ -235,7 +235,7 @@ extension TreeTests {
         cbt.createCBT(of: ["1","2","3","4","5"])
         let result = cbt.inorder()
 
-        XCTAssert(result == ["4","2","5","1","3"], "Not CBT as Result = \(result)")
+        XCTAssert(result == ["4","2","5","1","3"], "Not CBT as. Output = \(result)")
 
     }
 
@@ -243,14 +243,22 @@ extension TreeTests {
 }
 
 
-
-//MARK:- Diameter of tree
+//MARK:- Test Diameter of Binary Tre (CBT)
 extension TreeTests {
     func testCompleteBinaryTreeDiameter() {
         let cbt = CompleteBinaryTree<Int>()
         cbt.createCBT(of: [1,2,3,4,5])
         let result = cbt.calculateDiameter()
-        XCTAssert(result == 4, "Diameter should be 4. But result =  \(result)")
+        XCTAssert(result == 4, "Diameter should be 4. Output =  \(result)")
     }
+}
 
+//MARK:- Test Clone of Binary Tre (CBT)
+extension TreeTests {
+    func testCompleteBinaryClone() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [1,2,3,4,5,6])
+        let result = cbt.inorderClonedTree()
+        XCTAssert(result == [3,6,1,5,2,4], "Not cloned tree. Output = \(result)")
+    }
 }

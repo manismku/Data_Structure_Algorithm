@@ -27,6 +27,7 @@ class CompleteBinaryTree<T> {
     private var queue: LBQueue<GenericNode<T>>
     private var root: GenericNode<T>?
     private var output = [T]()
+    private var rootCloned: GenericNode<T>?
 
     private var diameter: Int = 0
 
@@ -143,5 +144,48 @@ extension CompleteBinaryTree {
 
 //MARK:- 2. Create cloned binary tree
 extension CompleteBinaryTree {
+    func createClonedBinaryTree() {
 
+        // first cloned root node
+        guard let validRoot = self.root else {
+            return
+        }
+
+        // since we have valid root so make root of cloned tree
+        self.rootCloned =  GenericNode<T>(value: validRoot.value)
+
+        cloneBinaryTree(validRoot, clonNode: self.rootCloned)
+
+    }
+
+    private func cloneBinaryTree(_ node: GenericNode<T>?, clonNode: GenericNode<T>?) {
+
+        guard let validNode = node else { return } // stop if found NULL
+
+        // if left side is value
+        if let value = validNode.left?.value {
+            let rightNode = GenericNode<T>(value: value)
+            clonNode?.right = rightNode
+        }
+
+        // if right side is value
+        if let value = validNode.right?.value {
+            // create a node
+            let leftNode = GenericNode<T>(value: value)
+            clonNode?.left = leftNode
+        }
+
+        cloneBinaryTree(validNode.left, clonNode: clonNode?.right)
+        cloneBinaryTree(validNode.right, clonNode: clonNode?.left)
+
+    }
+
+    func inorderClonedTree() -> [T] {
+        // first clone
+        createClonedBinaryTree()
+        // do inorder
+        inorderRecursive(self.rootCloned)
+        //send output to test
+        return self.output
+    }
 }
