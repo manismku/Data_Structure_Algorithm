@@ -22,12 +22,13 @@ class GenericNode<T> {
 
 // we are covering binary tree as complete tree as this will cover both Binary Tree problem
 // and Complete Binary problem
-class CompleteBinaryTree<T> {
+class CompleteBinaryTree<T: Comparable> {
 
     private var queue: LBQueue<GenericNode<T>>
     private(set) var root: GenericNode<T>?
     private var output = [T]()
-    private var rootCloned: GenericNode<T>?
+    private var rootCloned: GenericNode<T>? // This is for root node of cloned tree
+    private var lcaNode: GenericNode<T>? // This is for LCA node
 
     private var diameter: Int = 0
 
@@ -72,7 +73,22 @@ class CompleteBinaryTree<T> {
     }
 
     func searchNode(elem: T) -> Bool {
-        return false
+
+        return searchPrivate(self.root, elem: elem)
+    }
+
+    func searchPrivate(_ node: GenericNode<T>?, elem: T) -> Bool {
+
+        guard let validNode = node else {
+            return false // we dont have root
+        }
+
+        if validNode.value == elem {
+            return true
+        }
+
+        return searchPrivate(validNode.left, elem: elem) || searchPrivate(validNode.right, elem: elem)
+
     }
 
     func deleteNode(elem: T) -> Bool {
@@ -80,6 +96,7 @@ class CompleteBinaryTree<T> {
     }
 }
 
+//MARK:- Traversal
 extension CompleteBinaryTree {
     func inorder() -> [T] {
         inorderRecursive(self.root)
@@ -197,10 +214,10 @@ extension CompleteBinaryTree  {
     func levelWithMaxSum(_ aRoot: GenericNode<Int>?) -> Int {
         var currLvlElemCounter = 0
         var nextLvlElemCounter = 0
-        var queue = LBQueue<GenericNode<Int>>()
+        let queue = LBQueue<GenericNode<Int>>()
         var maxSum = 0
 
-        guard var validNode = aRoot  else {
+        guard let validNode = aRoot  else {
             return 0
         }
 
@@ -236,5 +253,60 @@ extension CompleteBinaryTree  {
         return maxSum
     }
 
+}
+
+
+//MARK:- Problem 4. Find LCA of nodes.
+// we using optional here to check error / no values
+extension CompleteBinaryTree  {
+
+    func findLCA(firstVal: T, secondVal: T) -> T? {
+
+        // guard for the roo
+        guard let validRoot = self.root else {
+            return nil
+        }
+
+        if findLCA(firstVal, secondVal, self.root) {
+            return self.lcaNode?.value
+        }
+
+        return nil
+    }
+
+    private func findLCA(_ firstVal: T?, _ secondVal: T?, _ node: GenericNode<T>?) -> Bool {
+
+        // check both should not be equal
+        guard firstVal != secondVal else {
+            return false
+        }
+
+        guard let currNode =  node else {
+            return false
+        }
+
+        var left = false // true
+        var right = false // true
+        var current = false
+
+        if currNode.value == firstVal || currNode.value == secondVal {
+            current = true
+        }
+
+        left = findLCA(firstVal, secondVal, currNode.left)
+        right = findLCA(firstVal, secondVal, currNode.right)
+
+        // previous stack 
+        if (left && right) ||  (right && current) || (left && current) {
+            self.lcaNode = currNode
+        }
+
+        // current stack
+        if left || right || current {
+            return true
+        } else {
+            return false
+        }
+    }
 
 }

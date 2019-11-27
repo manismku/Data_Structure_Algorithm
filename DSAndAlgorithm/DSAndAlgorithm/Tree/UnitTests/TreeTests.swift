@@ -286,3 +286,32 @@ extension TreeTests {
         XCTAssert(result == 4, "Maximum level sum should be 4. Output = \(result)")
     }
 }
+
+
+
+//MARK:- Search particular node
+extension TreeTests {
+    func testNodeSearch() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [1,2,3,4,5,6])
+        let result = cbt.searchNode(elem: 7)
+        XCTAssert(result == false, "Unable to find. Output = \(result)")
+    }
+
+    func testNodeSearchStrng() {
+        let cbt = CompleteBinaryTree<String>()
+        cbt.createCBT(of: ["1","2"])
+        let result = cbt.searchNode(elem: "1")
+        XCTAssert(result == true, "Unable to find. Output = \(result)")
+    }
+
+
+    func testLCANode() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
+        let result = cbt.findLCA(firstVal: 9, secondVal: 11)
+        XCTAssert(result == 2, "Not the LCA node. Output = \(String(describing: result))")
+    }
+
+
+}
