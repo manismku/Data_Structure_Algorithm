@@ -313,5 +313,14 @@ extension TreeTests {
         XCTAssert(result == 2, "Not the LCA node. Output = \(String(describing: result))")
     }
 
+}
 
+
+extension TreeTests {
+    func testTraversalIterativeTes() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [4,3,6,5,7])
+        let result = cbt.inorderIterative()
+        XCTAssert(result == [5,3,7,4,6], "Not inorder traversal. Output = \(String(describing: result))")
+    }
 }

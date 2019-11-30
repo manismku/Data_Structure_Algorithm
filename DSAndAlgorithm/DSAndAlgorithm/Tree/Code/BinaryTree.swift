@@ -96,7 +96,7 @@ class CompleteBinaryTree<T: Comparable> {
     }
 }
 
-//MARK:- Traversal
+//MARK:- Recursive Traversal log(n) complexity with O(n) space(comes from stack)
 extension CompleteBinaryTree {
     func inorder() -> [T] {
         inorderRecursive(self.root)
@@ -115,6 +115,44 @@ extension CompleteBinaryTree {
         self.output.append(validNode.value)
         // Go right
         inorderRecursive(validNode.right)
+    }
+}
+
+//MARK:- Iterative Traversal Usin Stack. Time Complexity O(n)
+extension CompleteBinaryTree {
+    func inorderIterative() -> [T] {
+        self.output.removeAll()
+        let aStack = Stack<GenericNode<T>>()
+        var currentNode = self.root
+
+        while currentNode != nil || aStack.isEmpty == false {
+            // a push
+            while let validCurNode = currentNode {
+                aStack.push(validCurNode)
+                currentNode = currentNode?.left
+            }
+            
+            do {
+                 currentNode = try aStack.pop()
+                 self.output.append(currentNode!.value)
+                 currentNode = currentNode?.right
+            } catch( _) {
+                print("No error")
+            }
+        }
+
+        return self.output
+    }
+
+}
+
+
+//MARK:- Threaded Traversal(Morris Traversal) Using Thread. Time Complexity - O(n), Space O(1)
+extension CompleteBinaryTree {
+
+    func morrisTraversalInorder() -> [T] {
+        self.output.removeAll()
+        return self.output
     }
 }
 
@@ -263,7 +301,7 @@ extension CompleteBinaryTree  {
     func findLCA(firstVal: T, secondVal: T) -> T? {
 
         // guard for the roo
-        guard let validRoot = self.root else {
+        guard let _ = self.root else {
             return nil
         }
 
@@ -308,5 +346,16 @@ extension CompleteBinaryTree  {
             return false
         }
     }
+}
 
+
+
+extension CompleteBinaryTree {
+    func findInorderSuccessor() -> Int {
+        return 0
+    }
+
+    func findInorderPredecessor() -> Int {
+        return 0
+    }
 }
