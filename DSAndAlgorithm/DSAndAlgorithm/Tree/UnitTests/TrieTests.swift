@@ -18,6 +18,20 @@ class TrieTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+
+    func testValidInsertAndSearchSuccess() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let aTrie = Tries()
+        aTrie.insertInTrie(input: "a")
+        aTrie.insertInTrie(input: "as")
+
+        let result = aTrie.search(pattern: "as")
+
+        XCTAssert(result == true, "as not found")
+
+    }
+
     func testInsertAndSearchSuccess() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -74,5 +88,7 @@ class TrieTests: XCTestCase {
 
         XCTAssert(result == true, "heaven not found")
     }
+
+
 
 }

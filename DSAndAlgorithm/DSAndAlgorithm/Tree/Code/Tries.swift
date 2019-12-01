@@ -21,7 +21,8 @@ class TrieNode {
     init(_ char: Character, value: Int = 0) {
         self.data = char
         self.value = value
-        self.childrens = [TrieNode?].init(repeating: nil, count: 26)
+        self.childrens = [TrieNode?].init(repeating: nil, count: 25)
+        self.childrens.reserveCapacity(26)
     }
 }
 
@@ -29,6 +30,7 @@ class Tries {
 
     // there will be always root node in case of Trie (Retrieval)
     var root: TrieNode
+    var words = [String]()
 
     init() {
         self.root = TrieNode(" ")
@@ -50,8 +52,9 @@ class Tries {
                 // create new node
                 let newNode = TrieNode(char)
                 // insert at position so get the index // assumer all ascii value
-                let index = char.asciiValue! - 97
-                curr.childrens.insert(newNode, at: Int(index))
+                let i = char.asciiValue! - 97
+                print("This is the index = \(i)")
+                curr.childrens.insert(newNode, at: Int(i))
                 curr = newNode
             }
 
@@ -65,20 +68,15 @@ class Tries {
 
     func search(pattern: String) -> Bool {
         var curr = self.root
-
         for char in pattern.lowercased() {
             let result = curr.childrens.firstIndex { (node) -> Bool in
                 return node?.data == char
             }
-
             guard let validIndx = result else {
                 return false
             }
-
             curr = curr.childrens[validIndx]!
-
         }
-
         return true
     }
 
