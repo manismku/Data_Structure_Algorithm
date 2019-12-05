@@ -316,11 +316,44 @@ extension TreeTests {
 }
 
 
+//MARK:- Iterative and Last Node
 extension TreeTests {
     func testTraversalIterativeTes() {
         let cbt = CompleteBinaryTree<Int>()
         cbt.createCBT(of: [4,3,6,5,7])
         let result = cbt.inorderIterative()
         XCTAssert(result == [5,3,7,4,6], "Not inorder traversal. Output = \(String(describing: result))")
+    }
+
+
+    func testCBTlastNode() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [4,3,6,5,7])
+        if let result = cbt.findLastNodeInCBT() {
+            XCTAssert(result.value == 7, "Not the last node. Output = \(String(describing: result))")
+            return
+        }
+        XCTAssert(false, "Found nil value. Output")
+    }
+
+    func testInorderlastNode() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [4,3,6,5,7])
+        let result = cbt.findInorderOLastNode()
+        XCTAssert(result == 6, "Not inorder traversal. Output = \(String(describing: result))")
+    }
+
+    func testEmptyInorderlastNode() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [])
+        let result = cbt.findInorderOLastNode()
+        XCTAssert(result == nil, "Not inorder traversal. Output = \(String(describing: result))")
+    }
+
+    func testInroderSuccessor() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [1,2,3,4,5,6])
+        let result = cbt.findInorderSuccessor(for: 3)
+        XCTAssert(result == 6, "Not inorder successor. Output = \(String(describing: result))")
     }
 }

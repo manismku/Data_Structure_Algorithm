@@ -349,13 +349,153 @@ extension CompleteBinaryTree  {
 }
 
 
+//MARK:- find last node for each type of traversal
+extension CompleteBinaryTree {
+
+    // LDR
+    func findInorderOLastNode() -> T? {
+        guard let validTree = self.root else {
+            return nil
+        }
+        let lastNode = findInorderOLastNode(validTree)
+        return lastNode.value
+    }
+
+    private func findInorderOLastNode(_ node: GenericNode<T>) -> GenericNode<T> {
+
+        guard let validNode = node.right else {
+            return node
+        }
+
+        let last = findInorderOLastNode(validNode)
+
+        return last
+    }
+
+
+    func findLastNodeInCBT() -> GenericNode<T>?  {
+        guard let validNode = self.root else {
+            return nil
+        }
+
+        let aQueue = LBQueue<GenericNode<T>>()
+        _ = aQueue.enqueue(elem: validNode)
+
+        var curNode = validNode
+        while aQueue.isEmpty == false {
+
+            guard let  front = try? aQueue.dequeue().get() else {
+                break
+            }
+
+            if let frontLeft = front.left {
+               _ =  aQueue.enqueue(elem: frontLeft)
+            }
+
+            if let frontRight = front.right  {
+                _ = aQueue.enqueue(elem: frontRight)
+            }
+
+            curNode = front
+        }
+
+        return curNode
+    }
+
+}
+
 
 extension CompleteBinaryTree {
-    func findInorderSuccessor() -> Int {
-        return 0
+
+    func findInorderSuccessor(for value: T) -> T? {
+
+        guard let validNode = self.root else {
+            return nil
+        }
+
+        return value
+    }
+
+
+
+    private func findInorderSuccessor(_ node: GenericNode<T>?, for elem: T) -> GenericNode<T>? {
+
+        return nil
+//        guard let validNode = node else {
+//            return nil // aim is that we wil not hit till this point and if we hit node is not foundi if we are doing preprocessing of the node
+//        }
+//
+//        var isLeftFound = false
+//        var isRightFound = false
+//        var foundNode: GenericNode<T>?
+//
+//        if validNode.value == elem {
+//            foundNode = validNode
+//        }
+//
+//        // 4.left = nil
+//        if let validfoundNode = findInorderSuccessor(validNode.left, for: elem) {
+//            // but if we found left side
+//            //foundNode = validfoundNode
+//            isLeftFound = true
+//        } else let validfoundNode = findInorderSuccessor(validNode.right, for: elem) {
+//            // we didnt found left thats why we are now coming right side
+//            // execute cases for in order processing
+//            //foundNode = validfoundNode
+//            isRightFound = true
+//            if validfoundNode.value == elem { // we have no right subtree
+//
+//            } else { // this could be successor node which found node has returned
+//
+//            }
+//        }
+//
+//        // we didn't found left or right.
+//        guard let nodeWeFound = foundNode else {
+//            return nil
+//        }
+//
+//        if nodeWeFound.right != nil {
+//            // we have right node.
+//            // lets find leftmost node in this subtree rooted at 'nodeWeFound'
+//
+//            guard var sucessorNode = nodeWeFound.right?.left else {
+//                return nodeWeFound.right
+//            }
+//
+//            // keep going to left
+//            while let aNode = sucessorNode.left {
+//                sucessorNode = sucessorNode.left
+//            }
+//
+//            // at this point we have left most node in right subtree
+//            return sucessorNode
+//
+//        } else {
+//            // we dont have right node. so need to got ancesstor or parent ( and if ancesstor is NULL then this is the last node)
+//            // because we already at node and for inorder succesor if already on node then you go right
+//
+//            // time to check just return to parent and ancesstor
+//            // this also means I can't complete my job to find successor and leving for parent and ancesstor
+//
+//            return nodeWeFound
+//
+//            // we are returning two type of values so check must be there
+//        }
+//
+
+
+    }
+
+
+
+     func successor(_ node: GenericNode<T>?, target: T)  {
+
     }
 
     func findInorderPredecessor() -> Int {
         return 0
     }
 }
+
+
