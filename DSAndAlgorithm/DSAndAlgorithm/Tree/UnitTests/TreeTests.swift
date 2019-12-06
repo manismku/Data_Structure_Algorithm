@@ -336,6 +336,17 @@ extension TreeTests {
         XCTAssert(false, "Found nil value. Output")
     }
 
+
+    func testCBTlastNodeRecursive() {
+        let cbt = CompleteBinaryTree<Int>()
+        cbt.createCBT(of: [4,3,6,5,7,8])
+        if let result = cbt.findDeepestNodeInCBT() {
+            XCTAssert(result.value == 8, "Not the last node. Output = \(String(describing: result.value))")
+            return
+        }
+        XCTAssert(false, "Found nil value. Output")
+    }
+
     func testInorderlastNode() {
         let cbt = CompleteBinaryTree<Int>()
         cbt.createCBT(of: [4,3,6,5,7])

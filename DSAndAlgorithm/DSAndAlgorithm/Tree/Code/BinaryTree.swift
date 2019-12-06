@@ -402,6 +402,48 @@ extension CompleteBinaryTree {
         return curNode
     }
 
+
+    // MARK:- Recursive Approach
+    //  We know the result of childrens and based on that we can create solution for root
+
+    func findDeepestNodeInCBT() -> GenericNode<T>?  {
+        guard let validRoot = self.root else {
+            return nil // empty tree
+        }
+
+        let result = findDeepestNodeInCBT(validRoot)
+
+        return result.node
+
+    }
+
+    func findDeepestNodeInCBT(_ node: GenericNode<T>? ) -> (node: GenericNode<T>?, level: Int)  {
+
+        guard let avalidNode = node else {
+            return (nil,0) // empty tree and zero level
+        }
+
+        let left =  findDeepestNodeInCBT(avalidNode.left)
+        let right =  findDeepestNodeInCBT(avalidNode.right)
+        var result:  (node: GenericNode<T>?, level: Int) = (nil, 0)
+
+         // we are using only level here for computation
+        // but saving
+        if left.level == right.level {
+            result.node = right.node
+            result.level = right.level + 1
+        } else if left.level > right.level {
+            result.node = left.node
+            result.level = left.level + 1
+        }
+
+        if result.node == nil {
+            result.node = avalidNode
+        }
+
+        return result
+    }
+
 }
 
 
