@@ -8,16 +8,6 @@
 
 import Foundation
 
-// Tree node
-class TreeNode {
-    var val: Int
-    var left: TreeNode?
-    var right: TreeNode?
-
-    init(with value: Int) {
-        self.val = value
-    }
-}
 
 
 // BinarySearchTree class
