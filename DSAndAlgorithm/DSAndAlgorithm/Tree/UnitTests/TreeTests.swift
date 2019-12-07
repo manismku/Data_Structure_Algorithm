@@ -53,21 +53,22 @@ extension TreeTests {
         XCTAssert(result == [50,70,80,90], "This is not inorder traversal of BST")
     }
 
-    func testBSTPreOrder() {
+    func testBSTkSmallestSum() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let bst = BinarySearchTree()
-        bst.addChild(elem: 50)
-        bst.addChild(elem: 30)
-        bst.addChild(elem: 20)
-        bst.addChild(elem: 40)
-        bst.addChild(elem: 70)
-        bst.addChild(elem: 60)
-        bst.addChild(elem: 80)
+        bst.addChild(elem: 8)
+        bst.addChild(elem: 5)
+        bst.addChild(elem: 11)
+        bst.addChild(elem: 2)
+        bst.addChild(elem: 7)
+        bst.addChild(elem: 3)
 
-        let result = bst.preorder()
-        XCTAssert(result == [50, 30, 20, 40, 70, 60, 80], "This is not preorder traversal of BST")
+        let result = bst.findKSmallestElementSum(5)
+        XCTAssert(result == 25, "Smalest Sum = \(result)")
     }
+
+
 
     func testSkewedBSTPreOrder() {
         // This is an example of a functional test case.
