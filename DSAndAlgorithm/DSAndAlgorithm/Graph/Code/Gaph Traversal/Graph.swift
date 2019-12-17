@@ -81,7 +81,7 @@ class AdjacencyListGraph {
 
        vertex.markVisited()
 
-      // Pre Order
+       // Pre Order
        self.output.append(vertex.value)
 
         // get it all neighbours
@@ -90,8 +90,41 @@ class AdjacencyListGraph {
         }
     }
 
-    func BFSTraversal() -> [Vertex] {
-        return []
+    func BFSTraversal(startNode: Vertex) -> [String] {
+        BFSTraversalDirected(startNode)
+        return self.output
+    }
+
+    func BFSTraversalUndirected() -> [String] {
+        for v in self.adjcLists {
+            if !v.isVisited {
+                BFSTraversalDirected(v)
+            }
+        }
+        return self.output
+    }
+
+    private func BFSTraversalDirected( _ vertex: Vertex) {
+
+        let Q = LBQueue<Vertex>()
+
+        _ = Q.enqueue(elem: vertex)
+
+         vertex.markVisited()
+
+        while !Q.isEmpty {
+            print("In loop = \(Q.front?.value)")
+            if let vertex = try? Q.dequeue().get() {
+                self.output.append(vertex.value)
+                // get it all neighbours
+                for neighbour in vertex.neighbours {
+                    if !neighbour.dst.isVisited {
+                        _ = Q.enqueue(elem: neighbour.dst)
+                        neighbour.dst.markVisited()
+                    }
+                }
+            }
+        }
     }
 
 }
