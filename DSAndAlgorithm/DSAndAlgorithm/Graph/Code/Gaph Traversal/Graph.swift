@@ -11,11 +11,11 @@ import Foundation
 
 // represents a vertex
 class Vertex {
-    var value: Character
+    var value: String
     var isVisited: Bool
     var neighbours: Array<Edge> // incase of isolated component
 
-    init(value: Character) {
+    init(value: String) {
         self.value = value
         self.isVisited = false
         self.neighbours = []
@@ -45,23 +45,35 @@ struct Edge {
 class AdjacencyListGraph {
     // adjacency list hold an array of
     private var adjcLists: [Vertex] = []
-    private var output: [Character] = []
-    // create vertex
+    private var output: [String] = []
+
 
     // create vertex
-    func createVertex(key: Character) -> Vertex {
+    func createVertex(key: String) -> Vertex {
         // node altready presetn
         if let existingVertex = self.adjcLists.filter({$0.value == key}).first {
             return existingVertex
         }
-        return Vertex(value: key)
+
+        let v = Vertex(value: key)
+        self.adjcLists.append(v)
+
+        return v
     }
 
-    func DFSTraversal() -> [Character] {
+    func DFSTraversal(startNode: Vertex) -> [String] {
+        DFSTraversal(startNode)
         return self.output
     }
 
-    func DFSTraversal(_ vertex: Vertex)  {
+    func DFSTraversalUndirected() -> [String] {
+        for v in self.adjcLists {
+            DFSTraversal(v)
+        }
+        return self.output
+    }
+
+    private func DFSTraversal(_ vertex: Vertex)  {
 
     // we dont want to visit node which is already visited
     // thsi may come when we have one node falls in two adjacency list
@@ -69,16 +81,17 @@ class AdjacencyListGraph {
 
        vertex.markVisited()
 
+      // Pre Order
+       self.output.append(vertex.value)
+
+        // get it all neighbours
         for neighbour in vertex.neighbours {
-            // do Post Order DFS again
             _ = DFSTraversal(neighbour.dst)
         }
-        // get it all neighbours
-        self.output.append(vertex.value)
-
     }
 
     func BFSTraversal() -> [Vertex] {
         return []
     }
+
 }

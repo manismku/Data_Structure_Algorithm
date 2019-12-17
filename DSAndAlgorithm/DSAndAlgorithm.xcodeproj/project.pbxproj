@@ -188,18 +188,18 @@
 		79AEE68223A50EED00602117 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				79AEE68423A50FCE00602117 /* Gaph Presentation */,
+				79AEE68423A50FCE00602117 /* Gaph Traversal */,
 			);
 			path = Code;
 			sourceTree = "<group>";
 		};
-		79AEE68423A50FCE00602117 /* Gaph Presentation */ = {
+		79AEE68423A50FCE00602117 /* Gaph Traversal */ = {
 			isa = PBXGroup;
 			children = (
 				79AEE68523A50FE200602117 /* Graph.swift */,
 				79AEE68B23A5104600602117 /* GraphTests.swift */,
 			);
-			path = "Gaph Presentation";
+			path = "Gaph Traversal";
 			sourceTree = "<group>";
 		};
 		79D8AF6A23709AA3002C7B66 /* Queue */ = {
