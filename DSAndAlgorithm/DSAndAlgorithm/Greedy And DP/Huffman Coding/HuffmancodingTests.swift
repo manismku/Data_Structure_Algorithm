@@ -21,6 +21,11 @@ class HuffmancodingTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let hc = HuffmanCoding(input: ["a" : 5, "b" : 9, "c" : 12, "d" : 13, "e" : 16, "f" : 45])
+        hc.createHuffmanTree()
+        let result = hc.getBitTable()
+
+        XCTAssert(result == ["a" : "1100", "b" : "1101", "c" : "100", "d" : "101", "e" : "111", "f" : "0"], "result is = \(result)")
     }
 
 

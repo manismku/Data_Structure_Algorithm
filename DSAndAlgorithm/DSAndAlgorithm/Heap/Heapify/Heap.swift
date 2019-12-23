@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//TO-DO: A binary heap should have capacity. We can't insert more than the capacity of the binary heap
 class BinaryHeap<T: Comparable> {
 
     // We use array data structure to store the heap
@@ -27,7 +27,11 @@ class BinaryHeap<T: Comparable> {
         return array[0] // since elements are stored in array as level order traversal of CBt
     }
 
-    func deleteMin() -> T {
+    func deleteMin() -> T? {
+        guard self.size != 0  else {
+            return nil
+        }
+
         let min = self.array[0]
         self.array.swapAt(0, size - 1)
         self.array.removeLast()

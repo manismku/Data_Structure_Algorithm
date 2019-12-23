@@ -10,6 +10,9 @@
 		7929078A23B0DC1500E7B250 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD970923AFB6D000EC9C18 /* Heap.swift */; };
 		7929078E23B0ED2900E7B250 /* Huffcoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7929078D23B0ED2900E7B250 /* Huffcoding.swift */; };
 		7929079023B0ED3900E7B250 /* HuffmancodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7929078F23B0ED3900E7B250 /* HuffmancodingTests.swift */; };
+		7929079223B1286000E7B250 /* HuffManTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7929079123B1286000E7B250 /* HuffManTreeNode.swift */; };
+		7929079323B13F7000E7B250 /* Huffcoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7929078D23B0ED2900E7B250 /* Huffcoding.swift */; };
+		7929079423B13F7700E7B250 /* HuffManTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7929079123B1286000E7B250 /* HuffManTreeNode.swift */; };
 		793B21B72387A5270056F354 /* RootToLeaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B21B62387A5270056F354 /* RootToLeaf.swift */; };
 		793B21B92387A8AE0056F354 /* RootToLeaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B21B62387A5270056F354 /* RootToLeaf.swift */; };
 		793B21C123899AC90056F354 /* TreeOperationsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B21C023899AC90056F354 /* TreeOperationsProtocol.swift */; };
@@ -72,6 +75,7 @@
 /* Begin PBXFileReference section */
 		7929078D23B0ED2900E7B250 /* Huffcoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Huffcoding.swift; sourceTree = "<group>"; };
 		7929078F23B0ED3900E7B250 /* HuffmancodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuffmancodingTests.swift; sourceTree = "<group>"; };
+		7929079123B1286000E7B250 /* HuffManTreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuffManTreeNode.swift; sourceTree = "<group>"; };
 		793B21B62387A5270056F354 /* RootToLeaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootToLeaf.swift; sourceTree = "<group>"; };
 		793B21C023899AC90056F354 /* TreeOperationsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeOperationsProtocol.swift; sourceTree = "<group>"; };
 		793B21C223899AE10056F354 /* CompleteBinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteBinaryTree.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			children = (
 				7929078D23B0ED2900E7B250 /* Huffcoding.swift */,
 				7929078F23B0ED3900E7B250 /* HuffmancodingTests.swift */,
+				7929079123B1286000E7B250 /* HuffManTreeNode.swift */,
 			);
 			path = "Huffman Coding";
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				79D8AFA2237A8FC2002C7B66 /* Queue.swift in Sources */,
 				795D712D239A63E4005822D5 /* LeftView.swift in Sources */,
 				79D8AFA1237A8F64002C7B66 /* InterleaveElements.swift in Sources */,
+				7929079323B13F7000E7B250 /* Huffcoding.swift in Sources */,
 				798E8D5E23850F4900F1DBB7 /* BST.swift in Sources */,
 				79D8AFA4237A9067002C7B66 /* Stack.swift in Sources */,
 				79D8AFA3237A904E002C7B66 /* LBCircularQueue.swift in Sources */,
@@ -454,6 +460,7 @@
 				793B21C4238AF2B80056F354 /* CompleteBinaryTree.swift in Sources */,
 				798712F6237C577B00D8F57B /* LBDequeue.swift in Sources */,
 				79716C2523A89E5500CA3184 /* CycleDetectionTests.swift in Sources */,
+				7929079423B13F7700E7B250 /* HuffManTreeNode.swift in Sources */,
 				79CD970C23AFB6E300EC9C18 /* HeapTests.swift in Sources */,
 				7929078A23B0DC1500E7B250 /* Heap.swift in Sources */,
 				79AEE68C23A5104600602117 /* GraphTests.swift in Sources */,
@@ -484,6 +491,7 @@
 				798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */,
 				795D7128239A609D005822D5 /* TreeNode.swift in Sources */,
 				79AEE68623A50FE200602117 /* Graph.swift in Sources */,
+				7929079223B1286000E7B250 /* HuffManTreeNode.swift in Sources */,
 				795D7124239A5F9A005822D5 /* LeftView.swift in Sources */,
 				79A89822239C0B08001299E6 /* BST+kSmallestSum.swift in Sources */,
 				79D8AF9A2379CE45002C7B66 /* Stack.swift in Sources */,
