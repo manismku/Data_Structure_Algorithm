@@ -148,22 +148,25 @@ class LBPriorityQueue: PriorityQueue {
 
 
     /*
-     *  Delete operation on min-heap will extract the value from heap delete
-     *  that element. This operation will reduce size of the heap.
-     *  We can't delete any random element as it will violate CBT property of Heap.
-     *  So we repalce last with first and then delete last element.
-     *  Since element at root is changed now we have to push it dowm
+     *  1. Delete operation on min-heap will extract the value from heap and deletes the min. element
+     *  2. This operation will reduce size of the heap.
+     *  3. We can't delete any random element as it will violate CBT property of Heap
+     *       So we repalce last with first and then delete last element.
+     *  4. Since element at root is changed we need to push down
      */
     func delete() -> Result<T, PQError> {
+
+        // check if items exist
         guard self.items.count > 0 else {
             return .failure(.Empty)
         }
+
         //get the minimum value from heap
         let minVal = self.items[MIN_INDEX]
         let size = self.items.count
         self.items.swapAt(MIN_INDEX, (size - 1))
 
-        //remove last item
+        //remove last item (We can also reduce the size of heap)
         self.items.removeLast()
 
         //swim-down from root
@@ -174,8 +177,8 @@ class LBPriorityQueue: PriorityQueue {
         return .success(minVal)
     }
 
-    private func swimDown(_ curIndx: Int) {
 
+    private func swimDown(_ curIndx: Int) {
         guard isInRange(indx: curIndx) else {
             return
         }

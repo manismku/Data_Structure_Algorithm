@@ -282,14 +282,11 @@ extension GraphTests {
         e.addEdge(neighbour: c)
         e.addEdge(neighbour: f)
 
-
         f.addEdge(neighbour: d)
         f.addEdge(neighbour: e)
-
 
         let result = graph.BFSTraversalUndirected()
 
         XCTAssert(result  == ["1", "2", "3", "4", "5", "6", "7" ], "Not BFS = \(result)")
     }
-
 }
