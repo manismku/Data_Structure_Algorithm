@@ -68,7 +68,7 @@ private extension BinaryHeap {
         }
     }
 
-    fileprivate func findSwapIndex(_ leftIndex: Int, _ minIndex: inout Int, _ rightIndex: Int) {
+    func findSwapIndex(_ leftIndex: Int, _ minIndex: inout Int, _ rightIndex: Int) {
         if self.array[leftIndex] < self.array[minIndex] {
             minIndex = leftIndex
         }

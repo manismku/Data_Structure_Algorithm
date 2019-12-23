@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7929078A23B0DC1500E7B250 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD970923AFB6D000EC9C18 /* Heap.swift */; };
+		7929078E23B0ED2900E7B250 /* Huffcoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7929078D23B0ED2900E7B250 /* Huffcoding.swift */; };
+		7929079023B0ED3900E7B250 /* HuffmancodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7929078F23B0ED3900E7B250 /* HuffmancodingTests.swift */; };
 		793B21B72387A5270056F354 /* RootToLeaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B21B62387A5270056F354 /* RootToLeaf.swift */; };
 		793B21B92387A8AE0056F354 /* RootToLeaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B21B62387A5270056F354 /* RootToLeaf.swift */; };
 		793B21C123899AC90056F354 /* TreeOperationsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B21C023899AC90056F354 /* TreeOperationsProtocol.swift */; };
@@ -68,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7929078D23B0ED2900E7B250 /* Huffcoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Huffcoding.swift; sourceTree = "<group>"; };
+		7929078F23B0ED3900E7B250 /* HuffmancodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuffmancodingTests.swift; sourceTree = "<group>"; };
 		793B21B62387A5270056F354 /* RootToLeaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootToLeaf.swift; sourceTree = "<group>"; };
 		793B21C023899AC90056F354 /* TreeOperationsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeOperationsProtocol.swift; sourceTree = "<group>"; };
 		793B21C223899AE10056F354 /* CompleteBinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteBinaryTree.swift; sourceTree = "<group>"; };
@@ -120,6 +124,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7929078B23B0ED0500E7B250 /* Greedy And DP */ = {
+			isa = PBXGroup;
+			children = (
+				7929078C23B0ED1700E7B250 /* Huffman Coding */,
+			);
+			path = "Greedy And DP";
+			sourceTree = "<group>";
+		};
+		7929078C23B0ED1700E7B250 /* Huffman Coding */ = {
+			isa = PBXGroup;
+			children = (
+				7929078D23B0ED2900E7B250 /* Huffcoding.swift */,
+				7929078F23B0ED3900E7B250 /* HuffmancodingTests.swift */,
+			);
+			path = "Huffman Coding";
+			sourceTree = "<group>";
+		};
 		794A8D2E23922BE000B4C69C /* StringMatching */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +327,7 @@
 		79E84A8423646B1700EFB4E1 /* DSAndAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
+				7929078B23B0ED0500E7B250 /* Greedy And DP */,
 				79CD970623AFB6A000EC9C18 /* Heap */,
 				79AEE68123A50EE300602117 /* Graph */,
 				794A8D2E23922BE000B4C69C /* StringMatching */,
@@ -417,6 +439,7 @@
 				79AEE68A23A5102300602117 /* Graph.swift in Sources */,
 				798712F3237C555600D8F57B /* InterleaveElementTests.swift in Sources */,
 				794A8D342392DECA00B4C69C /* TrieTests.swift in Sources */,
+				7929079023B0ED3900E7B250 /* HuffmancodingTests.swift in Sources */,
 				79A89823239C0B1D001299E6 /* BST+kSmallestSum.swift in Sources */,
 				79D8AFA2237A8FC2002C7B66 /* Queue.swift in Sources */,
 				795D712D239A63E4005822D5 /* LeftView.swift in Sources */,
@@ -456,6 +479,7 @@
 				79D8AF7D2372D82D002C7B66 /* LBDequeue.swift in Sources */,
 				79D8AF9C2379CE61002C7B66 /* Queue.swift in Sources */,
 				79D8AF822372FB65002C7B66 /* PriorityQueue.swift in Sources */,
+				7929078E23B0ED2900E7B250 /* Huffcoding.swift in Sources */,
 				79E84A8623646B1700EFB4E1 /* main.swift in Sources */,
 				798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */,
 				795D7128239A609D005822D5 /* TreeNode.swift in Sources */,
