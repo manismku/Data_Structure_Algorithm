@@ -1,14 +1,14 @@
 //
-//  HuffmancodingTests.swift
+//  01KnapsackTests.swift
 //  Test
 //
-//  Created by Manish Kumar on 23/12/19.
+//  Created by Manish Kumar on 26/12/19.
 //  Copyright © 2019 Manish. All rights reserved.
 //
 
 import XCTest
 
-class HuffmancodingTests: XCTestCase {
+class _1KnapsackTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,12 +21,9 @@ class HuffmancodingTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let hc = HuffmanCoding(input: ["a" : 5, "b" : 9, "c" : 12, "d" : 13, "e" : 16, "f" : 45])
-        hc.createHuffmanTree()
-        let result = hc.getBitTable()
-
-        XCTAssert(result == ["a" : "1100", "b" : "1101", "c" : "100", "d" : "101", "e" : "111", "f" : "0"], "result is = \(result)")
+        let ks = Knapsack(knapsack: 8, weights: [1,3,4,5], values: [1,4,5,7])
+        let output = ks.solveKnapsack()
+        XCTAssert(output == (11, [5,3]), "Not an optimal solution")
     }
-
 
 }

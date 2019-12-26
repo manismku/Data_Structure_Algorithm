@@ -64,7 +64,7 @@ extension HuffmanCoding {
         var newNode: HMTreeNode?
 
         while binaryHeap.size > 1 {
-            let (first, second) = extractTwoMinimumFromHeap()
+            let (first, second) = extractFirstTwoMinimumFromHeap()
 
             if let rightNode = second {
                 newNode = HMTreeNode("#", first!.freq + rightNode.freq)
@@ -82,7 +82,7 @@ extension HuffmanCoding {
         return root
     }
 
-    private func extractTwoMinimumFromHeap() -> (HMTreeNode?, HMTreeNode?) {
+    private func extractFirstTwoMinimumFromHeap() -> (HMTreeNode?, HMTreeNode?) {
         return (binaryHeap.deleteMin(), binaryHeap.deleteMin())
     }
 }

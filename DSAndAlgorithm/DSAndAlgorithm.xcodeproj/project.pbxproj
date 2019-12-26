@@ -29,6 +29,11 @@
 		795D712D239A63E4005822D5 /* LeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D7123239A5F9A005822D5 /* LeftView.swift */; };
 		79716C2323A89E4700CA3184 /* CycleDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79716C2223A89E4700CA3184 /* CycleDetection.swift */; };
 		79716C2523A89E5500CA3184 /* CycleDetectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79716C2423A89E5500CA3184 /* CycleDetectionTests.swift */; };
+		7974E33F23B4A3270023DDB0 /* 01Knapsack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E33E23B4A3270023DDB0 /* 01Knapsack.swift */; };
+		7974E34223B4A86A0023DDB0 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E34123B4A86A0023DDB0 /* Matrix.swift */; };
+		7974E34423B511FF0023DDB0 /* 01KnapsackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E34323B511FF0023DDB0 /* 01KnapsackTests.swift */; };
+		7974E34523B512080023DDB0 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E34123B4A86A0023DDB0 /* Matrix.swift */; };
+		7974E34623B5120F0023DDB0 /* 01Knapsack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E33E23B4A3270023DDB0 /* 01Knapsack.swift */; };
 		798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798712F1237C54B000D8F57B /* MaximumWindowElement.swift */; };
 		798712F3237C555600D8F57B /* InterleaveElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B9481237AE0DC00DC3D38 /* InterleaveElementTests.swift */; };
 		798712F5237C577200D8F57B /* MaximumWindowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798712F1237C54B000D8F57B /* MaximumWindowElement.swift */; };
@@ -87,6 +92,9 @@
 		796B9481237AE0DC00DC3D38 /* InterleaveElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterleaveElementTests.swift; sourceTree = "<group>"; };
 		79716C2223A89E4700CA3184 /* CycleDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleDetection.swift; sourceTree = "<group>"; };
 		79716C2423A89E5500CA3184 /* CycleDetectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleDetectionTests.swift; sourceTree = "<group>"; };
+		7974E33E23B4A3270023DDB0 /* 01Knapsack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 01Knapsack.swift; sourceTree = "<group>"; };
+		7974E34123B4A86A0023DDB0 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		7974E34323B511FF0023DDB0 /* 01KnapsackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 01KnapsackTests.swift; sourceTree = "<group>"; };
 		798712F1237C54B000D8F57B /* MaximumWindowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaximumWindowElement.swift; sourceTree = "<group>"; };
 		798E8D582384600800F1DBB7 /* BST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BST.swift; sourceTree = "<group>"; };
 		798E8D5C2384602B00F1DBB7 /* TreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
@@ -128,12 +136,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7929078B23B0ED0500E7B250 /* Greedy And DP */ = {
+		7929078B23B0ED0500E7B250 /* Greedy */ = {
 			isa = PBXGroup;
 			children = (
 				7929078C23B0ED1700E7B250 /* Huffman Coding */,
 			);
-			path = "Greedy And DP";
+			path = Greedy;
 			sourceTree = "<group>";
 		};
 		7929078C23B0ED1700E7B250 /* Huffman Coding */ = {
@@ -177,6 +185,23 @@
 				79716C2423A89E5500CA3184 /* CycleDetectionTests.swift */,
 			);
 			path = "Cycle Detection";
+			sourceTree = "<group>";
+		};
+		7974E33D23B4A2FD0023DDB0 /* DP */ = {
+			isa = PBXGroup;
+			children = (
+				7974E33E23B4A3270023DDB0 /* 01Knapsack.swift */,
+				7974E34323B511FF0023DDB0 /* 01KnapsackTests.swift */,
+			);
+			path = DP;
+			sourceTree = "<group>";
+		};
+		7974E34023B4A84C0023DDB0 /* Matrix */ = {
+			isa = PBXGroup;
+			children = (
+				7974E34123B4A86A0023DDB0 /* Matrix.swift */,
+			);
+			path = Matrix;
 			sourceTree = "<group>";
 		};
 		798E8D5523845FBA00F1DBB7 /* Tree */ = {
@@ -332,7 +357,9 @@
 		79E84A8423646B1700EFB4E1 /* DSAndAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
-				7929078B23B0ED0500E7B250 /* Greedy And DP */,
+				7974E34023B4A84C0023DDB0 /* Matrix */,
+				7974E33D23B4A2FD0023DDB0 /* DP */,
+				7929078B23B0ED0500E7B250 /* Greedy */,
 				79CD970623AFB6A000EC9C18 /* Heap */,
 				79AEE68123A50EE300602117 /* Graph */,
 				794A8D2E23922BE000B4C69C /* StringMatching */,
@@ -462,12 +489,15 @@
 				79716C2523A89E5500CA3184 /* CycleDetectionTests.swift in Sources */,
 				7929079423B13F7700E7B250 /* HuffManTreeNode.swift in Sources */,
 				79CD970C23AFB6E300EC9C18 /* HeapTests.swift in Sources */,
+				7974E34423B511FF0023DDB0 /* 01KnapsackTests.swift in Sources */,
 				7929078A23B0DC1500E7B250 /* Heap.swift in Sources */,
 				79AEE68C23A5104600602117 /* GraphTests.swift in Sources */,
 				79C17F322382CF71001A7A6B /* MAXWindowTests.swift in Sources */,
 				79D8AF962375649A002C7B66 /* PriorityQueue.swift in Sources */,
+				7974E34623B5120F0023DDB0 /* 01Knapsack.swift in Sources */,
 				798E8D5D2384602B00F1DBB7 /* TreeTests.swift in Sources */,
 				795D712C239A62B8005822D5 /* TreeNode.swift in Sources */,
+				7974E34523B512080023DDB0 /* Matrix.swift in Sources */,
 				795D712B239A6290005822D5 /* LeftViewTests.swift in Sources */,
 				794A8D362392DEEC00B4C69C /* Tries.swift in Sources */,
 				793B21B92387A8AE0056F354 /* RootToLeaf.swift in Sources */,
@@ -482,6 +512,7 @@
 				798E8D592384600800F1DBB7 /* BST.swift in Sources */,
 				79716C2323A89E4700CA3184 /* CycleDetection.swift in Sources */,
 				793B21C123899AC90056F354 /* TreeOperationsProtocol.swift in Sources */,
+				7974E33F23B4A3270023DDB0 /* 01Knapsack.swift in Sources */,
 				79CD970A23AFB6D000EC9C18 /* Heap.swift in Sources */,
 				79D8AF7D2372D82D002C7B66 /* LBDequeue.swift in Sources */,
 				79D8AF9C2379CE61002C7B66 /* Queue.swift in Sources */,
@@ -491,6 +522,7 @@
 				798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */,
 				795D7128239A609D005822D5 /* TreeNode.swift in Sources */,
 				79AEE68623A50FE200602117 /* Graph.swift in Sources */,
+				7974E34223B4A86A0023DDB0 /* Matrix.swift in Sources */,
 				7929079223B1286000E7B250 /* HuffManTreeNode.swift in Sources */,
 				795D7124239A5F9A005822D5 /* LeftView.swift in Sources */,
 				79A89822239C0B08001299E6 /* BST+kSmallestSum.swift in Sources */,
