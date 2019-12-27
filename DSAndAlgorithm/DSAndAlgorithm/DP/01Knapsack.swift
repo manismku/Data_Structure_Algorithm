@@ -10,16 +10,23 @@ import Foundation
 
 class Knapsack {
 
+    // store output
     private var output: (maxValue: Int, weights: [Int]) = (0,[])
+    // capture inputs
+    private var weights: [Int], values: [Int]
+    // the matrix
+    private var matrix: Matrix<Int>
+    // knapsack
+    private var totalCapacity: Int
 
-    var totalCapacity: Int
-    var matrix: Matrix<Int>
-    var weights: [Int], values: [Int]
-    var rows: Int {
+    //MARK- computed property
+    // total rows
+    private var rows: Int {
         return self.weights.count
     }
 
-    var columns: Int {
+    // total columns
+    private var columns: Int {
         return totalCapacity + 1
     }
 
@@ -30,11 +37,9 @@ class Knapsack {
         self.matrix = Matrix<Int>(rows: weights.count + 1, column: totalCapacity + 1)
     }
 
-    // bottom-up approach - DP
+    //MARK:- DP Bottom Up
     func solveKnapsack() -> (maxValue: Int, weights: [Int]) {
-        // iterate row
         for i in 0...self.rows {
-            // iterate colum
             let curWeight = (i == 0) ? 0 : self.weights[i - 1]
             let curValue = (i == 0) ? 0 : self.values[i - 1]
             for j in 0...self.totalCapacity {
@@ -42,12 +47,12 @@ class Knapsack {
                 let currCap = j
                 if i == 0 { //we dont have sub problem
                     if curWeight < currCap {
-                        // we are using current weight to fill  capacity
+                        //we are using current weight to fill  capacity
                           matrix[i, j]  = curValue
                     }
                 } else { // we have sub problem
                     if curWeight > currCap {
-                        // we cant fit the weight hence take previous sub problem
+                        //previous sub problem
                          matrix[i, j]  = matrix[i - 1, j]
                     } else {
                         // we can take current weight and also the previous sub-problem
