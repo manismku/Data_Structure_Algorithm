@@ -26,7 +26,7 @@ class DPTests: XCTestCase {
         XCTAssert(output == (11, [5,3]), "Not an optimal solution")
     }
 
-    func testRodCutting() {
+    func testRodCutting_1() {
         let rodCutting =  Rodcutting(data: (totalCapacity: 8, sizes: [1,2,3,4,5,6,7,8], values: [1, 5, 8, 9, 10, 17, 17, 20]))
         if let output = rodCutting.solveRodCutting() {
             XCTAssert(output.maxValue == 22, "Not optimal substructure")
@@ -34,6 +34,36 @@ class DPTests: XCTestCase {
             XCTAssert(false)
         }
 
+    }
+
+    func testRodCutting_2() {
+        let rodCutting =  Rodcutting(data: (totalCapacity: 10, sizes: [1,2,3,5], values: [1, 5, 8, 10]))
+        if let output = rodCutting.solveRodCutting() {
+            XCTAssert(output.maxValue == 26, "Not optimal substructure")
+        } else {
+            XCTAssert(false)
+        }
+    }
+
+    func testLCS_1() {
+        let lcs =  LCS(data: (s1: "GXTXAYB", s2: "AGGTAB"))
+        let result = lcs.findLCS()
+        XCTAssert(result.lentgh == 4, "Not optimal solution")
+        XCTAssert(result.seqeunce == "GTAB", "Not optimal solution")
+    }
+
+    func testLCS_2() {
+        let lcs =  LCS(data: (s1: "AGGTAB", s2: "GXTXAYB"))
+        let result = lcs.findLCS()
+        XCTAssert(result.lentgh == 4, "Not optimal solution")
+        XCTAssert(result.seqeunce == "GTAB", "Not optimal solution")
+    }
+
+    func testLCS_3() {
+        let lcs =  LCS(data: (s1: "ABC", s2: "DEF"))
+        let result = lcs.findLCS()
+        XCTAssert(result.lentgh == 0, "Not optimal solution")
+        XCTAssert(result.seqeunce == "", "Not optimal solution")
     }
 
 }

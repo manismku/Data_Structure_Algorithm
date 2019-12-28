@@ -36,6 +36,9 @@
 		7974E34623B5120F0023DDB0 /* 01Knapsack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E33E23B4A3270023DDB0 /* 01Knapsack.swift */; };
 		7974E34823B5F62B0023DDB0 /* RodCutting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E34723B5F62B0023DDB0 /* RodCutting.swift */; };
 		7974E34923B60D3C0023DDB0 /* RodCutting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E34723B5F62B0023DDB0 /* RodCutting.swift */; };
+		7974E34B23B620280023DDB0 /* DroppingEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E34A23B620280023DDB0 /* DroppingEgg.swift */; };
+		7974E34D23B774970023DDB0 /* LCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E34C23B774970023DDB0 /* LCS.swift */; };
+		7974E34E23B781520023DDB0 /* LCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974E34C23B774970023DDB0 /* LCS.swift */; };
 		798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798712F1237C54B000D8F57B /* MaximumWindowElement.swift */; };
 		798712F3237C555600D8F57B /* InterleaveElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B9481237AE0DC00DC3D38 /* InterleaveElementTests.swift */; };
 		798712F5237C577200D8F57B /* MaximumWindowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798712F1237C54B000D8F57B /* MaximumWindowElement.swift */; };
@@ -98,6 +101,8 @@
 		7974E34123B4A86A0023DDB0 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		7974E34323B511FF0023DDB0 /* DPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTests.swift; sourceTree = "<group>"; };
 		7974E34723B5F62B0023DDB0 /* RodCutting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RodCutting.swift; sourceTree = "<group>"; };
+		7974E34A23B620280023DDB0 /* DroppingEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppingEgg.swift; sourceTree = "<group>"; };
+		7974E34C23B774970023DDB0 /* LCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCS.swift; sourceTree = "<group>"; };
 		798712F1237C54B000D8F57B /* MaximumWindowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaximumWindowElement.swift; sourceTree = "<group>"; };
 		798E8D582384600800F1DBB7 /* BST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BST.swift; sourceTree = "<group>"; };
 		798E8D5C2384602B00F1DBB7 /* TreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
@@ -194,8 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				7974E34323B511FF0023DDB0 /* DPTests.swift */,
+				7974E34C23B774970023DDB0 /* LCS.swift */,
 				7974E33E23B4A3270023DDB0 /* 01Knapsack.swift */,
 				7974E34723B5F62B0023DDB0 /* RodCutting.swift */,
+				7974E34A23B620280023DDB0 /* DroppingEgg.swift */,
 			);
 			path = DP;
 			sourceTree = "<group>";
@@ -481,6 +488,7 @@
 				795D712D239A63E4005822D5 /* LeftView.swift in Sources */,
 				79D8AFA1237A8F64002C7B66 /* InterleaveElements.swift in Sources */,
 				7929079323B13F7000E7B250 /* Huffcoding.swift in Sources */,
+				7974E34E23B781520023DDB0 /* LCS.swift in Sources */,
 				798E8D5E23850F4900F1DBB7 /* BST.swift in Sources */,
 				7974E34923B60D3C0023DDB0 /* RodCutting.swift in Sources */,
 				79D8AFA4237A9067002C7B66 /* Stack.swift in Sources */,
@@ -524,10 +532,12 @@
 				79D8AF9C2379CE61002C7B66 /* Queue.swift in Sources */,
 				79D8AF822372FB65002C7B66 /* PriorityQueue.swift in Sources */,
 				7929078E23B0ED2900E7B250 /* Huffcoding.swift in Sources */,
+				7974E34B23B620280023DDB0 /* DroppingEgg.swift in Sources */,
 				79E84A8623646B1700EFB4E1 /* main.swift in Sources */,
 				798712F2237C54B000D8F57B /* MaximumWindowElement.swift in Sources */,
 				795D7128239A609D005822D5 /* TreeNode.swift in Sources */,
 				79AEE68623A50FE200602117 /* Graph.swift in Sources */,
+				7974E34D23B774970023DDB0 /* LCS.swift in Sources */,
 				7974E34223B4A86A0023DDB0 /* Matrix.swift in Sources */,
 				7929079223B1286000E7B250 /* HuffManTreeNode.swift in Sources */,
 				795D7124239A5F9A005822D5 /* LeftView.swift in Sources */,
