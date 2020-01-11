@@ -60,6 +60,9 @@ extension HuffmanCoding {
         }
     }
 
+    /*
+     *     Create Huffman tree by extracting two min node from heap
+     */
     func createHuffmanTree() -> HMTreeNode? {
         var newNode: HMTreeNode?
 
@@ -76,6 +79,7 @@ extension HuffmanCoding {
             newNode?.right = second
             root = newNode
 
+            // insert new node in binary heap
             binaryHeap.insert(key: root!)
         }
 

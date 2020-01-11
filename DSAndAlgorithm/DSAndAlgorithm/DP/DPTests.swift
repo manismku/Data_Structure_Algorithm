@@ -66,4 +66,22 @@ class DPTests: XCTestCase {
         XCTAssert(result.seqeunce == "", "Not optimal solution")
     }
 
+    func testMaxContSubSeq_1() {
+        let maxSeq = MaxValueContSubsequence(data: [1, -3, 4, -2, -1, 6])
+        let result = maxSeq.solve()
+       print("result is = \(result)")
+    }
+
+    func testMaxContSubSeq_2() {
+        let maxSeq = MaxSumWindowNotTwoContigous(data: [1, -3, 4, -2, -1, 6])
+        let result = maxSeq.solve()
+        XCTAssert(result.last! == 110, "Invalid result")
+    }
+
+    func testMaxContSubSeq_3() {
+        let maxSeq = MaxSumWindowNotTwoContigous(data: [5, 5, 10, 100, 10, 5])
+        let result = maxSeq.solve()
+        XCTAssert(result.last! == 110, "Invalid result")
+    }
+
 }
